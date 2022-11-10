@@ -19,16 +19,6 @@ public class InventoryServiceImpl implements InventoryService {
     public List<CategoryDto> getCategories() {
         String url = "http://localhost:8081/api/inventory/categories";
         RestTemplate restTemplate = new RestTemplate();
-
-        /*
-        List<CategoryDto> categoryDtos = restTemplate.exchange(
-                url,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<CategoryDto>>() {}
-                ).getBody();
-        */
-
         ResponseEntity<List<CategoryDto>> categoriesResponse = restTemplate.exchange(
                 url,
                 HttpMethod.GET,

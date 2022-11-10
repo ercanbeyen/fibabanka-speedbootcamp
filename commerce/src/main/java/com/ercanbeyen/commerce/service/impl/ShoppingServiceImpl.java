@@ -1,7 +1,7 @@
 package com.ercanbeyen.commerce.service.impl;
 
 import com.ercanbeyen.commerce.service.ShoppingService;
-import com.ercanbeyen.inventory.dto.ProductDto;
+
 import com.ercanbeyen.shopping.dto.CartDto;
 import com.ercanbeyen.shopping.dto.CartProductDto;
 import org.springframework.http.HttpEntity;
@@ -38,7 +38,6 @@ public class ShoppingServiceImpl implements ShoppingService {
     public String checkoutCart(int cartId) {
         String url = "http://localhost:8082/api/shopping/checkout/" + cartId;
         RestTemplate restTemplate = new RestTemplate();
-        //Boolean checkoutStatus = restTemplate.getForObject(url, Boolean.class);
         Boolean cartStatus = restTemplate.exchange(
                 url,
                 HttpMethod.PUT,
